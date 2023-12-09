@@ -1,0 +1,171 @@
+$font-size-normal: 18px;
+
+$color-text: #000000;
+$color-link: #000000;
+$color-link-2: #DEB359;
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Comfortaa', sans-serif;
+    font-size: $font-size-normal;
+    color: $color-text;
+}
+
+a{
+    color: $color-link;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover{
+    transition: 0.3s;
+}
+
+ul{
+    list-style-type: none;
+}
+
+img{
+    width: 100%;
+}
+
+.display-block{
+    display: block!important;
+}
+
+.display-none{
+    display: none;
+}
+
+
+//start of grid
+.contaner{
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+.justify-content-center{
+    justify-content: center;
+}
+
+.aling-items-center{
+    align-items: center;
+}
+
+.align-content-center{
+    align-content: center;
+}
+//end of grid
+
+
+//start of header
+header{
+    padding-top: 32px;
+}
+
+.logo{
+    max-width: 72px;
+}
+
+.block-menu{
+    position: relative;
+    z-index: 34;
+    nav{
+        ul{
+            li{
+                margin-right: 32px;
+                display: inline-block;
+                &:nth-last-child(1){
+                    margin-right: 0;
+                }
+                a{
+                    font-size: $font-size-normal;
+                    color: $color-text;
+                    &:hover{
+                        color: $color-link;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.block-owner{
+    p.block-owner_profession{
+        margin-bottom: 8px;
+        font-size: 29px;
+        color: #636363;;
+    }
+    p.block-owner_surname{
+        margin-bottom: 8px;
+        font-size: 96px;
+        font-weight: bold;
+    }
+    p.block-owner_name{
+        margin-bottom: 8px;
+        font-size: 55px;
+        font-weight: bold;
+    }
+    a{
+        position: relative;
+        display: inline-block;
+        &::after{
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            border-top: 20px solid rgba(0,0,0,0);
+            border-left: 38px solid #636363;
+            border-bottom: 20px solid rgba(0,0,0,0)
+        }
+        .block-owner_btn{
+            font-size: 20px;
+            font-weight: bold;
+            color: $color-link-2;
+        }
+        img{
+            margin-left: 27px;
+            max-width: 40px;
+            max-height: 49px;
+        }
+        
+    }
+    
+}
+
+
+
+
+//start of mobile view
+@media only screen and (max-width: 998px) {
+    .contaner{
+        padding: 0 10px;
+    }
+    
+}
+
