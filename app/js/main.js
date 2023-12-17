@@ -29,8 +29,6 @@
 
   jQuery('.marquee').marquee({
     duration: 30000,
-    // startVisible: true,
-    // duplicated: true
 });
 
 $(function(){
@@ -65,7 +63,7 @@ $('.slider').slick({
     {
       breakpoint: 1366,
       settings: {
-        centerPadding: '50px',
+        centerPadding: '30px',
       }
     },
     {
@@ -85,3 +83,31 @@ $('.slider').slick({
 });
 
 
+const anchors = document.querySelectorAll('a[href*="#"]')
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href').substr(1)
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
+
+var width = $(window).width();
+    if (width <= 1200) {
+      $('.service-block_item').on("click", function(){  
+        $(this).find(".service-info_block-mob").slideToggle(500);
+        $(".service-block_item-arrow.service-block_item-arrow-active").toggleClass('service-block_item-arrow-active');
+        $(this).find(".service-block_item-arrow ").toggleClass('service-block_item-arrow-active');
+      });
+    } else {
+      //code for other devices
+}
+
+
+  
+  
