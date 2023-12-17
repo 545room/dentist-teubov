@@ -97,17 +97,11 @@ for (let anchor of anchors) {
   })
 }
 
-var width = $(window).width();
-    if (width <= 1200) {
-      $('.service-block_item').on("click", function(){  
-        $(this).find(".service-info_block-mob").slideToggle(500);
-        $(".service-block_item-arrow.service-block_item-arrow-active").toggleClass('service-block_item-arrow-active');
-        $(this).find(".service-block_item-arrow ").toggleClass('service-block_item-arrow-active');
-      });
-    } else {
-      //code for other devices
-}
+// $('.service-block_item').on("click", function(){  
+//   $(".service-info.display-block").removeClass('display-block');
+//   $(this).find(".service-info").slide('display-block');
+//   $(".service-block_item-arrow.service-block_item-arrow-d").removeClass('service-block_item-arrow-d');
+//   $(this).find(".service-block_item-arrow ").addClass('service-block_item-arrow-d');
+// });
 
 
-  
-  
