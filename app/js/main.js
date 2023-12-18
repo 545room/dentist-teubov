@@ -1,7 +1,6 @@
 //mobile menu
   let hamburger = document.querySelector('.menu-tab');
   let menu = document.querySelector('.menu-hide');
-  let blockFon = document.querySelector('.black-fon')
   
   const toggleMenu = () => {
     menu.classList.toggle('display-block');
@@ -12,7 +11,6 @@
   
     toggleMenu();
     hamburger.classList.toggle('active');
-    blockFon.classList.toggle('display-block');
   });
   
   document.addEventListener('click', e => {
@@ -23,7 +21,6 @@
     if (!its_menu && !its_hamburger && menu_is_active) {
       toggleMenu();
       hamburger.classList.toggle('active');
-      blockFon.classList.toggle('display-block');
     }
   })
 
@@ -97,11 +94,53 @@ for (let anchor of anchors) {
   })
 }
 
-// $('.service-block_item').on("click", function(){  
-//   $(".service-info.display-block").removeClass('display-block');
-//   $(this).find(".service-info").slide('display-block');
-//   $(".service-block_item-arrow.service-block_item-arrow-d").removeClass('service-block_item-arrow-d');
-//   $(this).find(".service-block_item-arrow ").addClass('service-block_item-arrow-d');
+AOS.init({
+  offset: 300, // offset (in px) from the original trigger point
+  duration: 2000, // values from 0 to 3000, with step 50ms
+  once: true, // whether animation should happen only once - while scrolling down
+});
+
+// $('.slick-article').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   arrows: false,
+//   fade: true,
+//   asNavFor: '.slick-article-nav'
 // });
+
+// $('.slick-article').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   arrows: false,
+//   fade: true,
+//   asNavFor: '.slick-article'
+// });
+
+
+$('.service-block_item').on("click", function(){  
+  $(".service-block_item-arrow.service-block_item-arrow-d").removeClass('service-block_item-arrow-d');
+  $(this).find(".service-block_item-arrow ").addClass('service-block_item-arrow-d');
+});
+
+
+$(document).ready(function () {
+  // Toggle service info on click
+  $('.service-block_item').on('click', function () {
+      // Get the service info block associated with the clicked item
+      var serviceInfo = $(this).find('.service-info');
+      
+      // Check if the service info block is not visible
+      if (!serviceInfo.hasClass('display-block')) {
+          // Hide other visible service info blocks and show the clicked one
+          $('.service-info.display-block').removeClass('display-block');
+          serviceInfo.addClass('display-block');
+      }
+  });
+});
+
+
+
+
+
 
 

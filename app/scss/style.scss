@@ -68,6 +68,11 @@ main {
     position: relative;
 }
 
+.row-without{
+    display: flex;
+    flex-wrap: wrap; 
+}
+
 .justify-content-between{
     justify-content: space-between;
 }
@@ -264,8 +269,8 @@ header{
     &-info{
         display: none;
         position: absolute;
-        top: -30%;
-        left: -180%;
+        top: -10%;
+        left: -200%;
         font-size: 20px;
         padding: 24px 32px 24px 32px;
         border: 1px solid #ffffff50;
@@ -280,6 +285,9 @@ header{
             &-img{
                 margin: auto;
                 max-width: 353px;
+                img{
+                    margin-bottom: 40px;
+                }
             }
             p{
                 margin-bottom: 40px;
@@ -295,6 +303,7 @@ header{
         }
     }
     &-block{
+        position: relative;
         &_item{
             margin-bottom: 80px;
             cursor: pointer;
@@ -699,6 +708,103 @@ footer{
     }
 }
 
+.article-wr-2{
+    ul{
+        .article-wr-2_active{
+            a{
+                background-color: #8F9094!important;
+            }
+        }
+        li{
+            display: inline-block;
+            margin-right: 16px;
+            a{
+                padding: 15px 20px;
+                border-radius: 150px;
+                background-color: #DEB359;
+                color: #fff;
+                &:hover{
+                    background-color: #8F9094;
+                }
+            }
+            &:nth-last-of-type(1){
+                margin-right: 0;
+                margin-left: 80px;
+            }
+        }
+    }
+}
+
+//article-page
+.article-page{
+    margin-top: 56px;
+    margin-bottom: 260px;
+    max-width: 700px;
+    &_date{
+        margin-bottom: 16px;
+        font-size: 16px;
+        font-weight: 300;
+        color: #636363;
+    }
+    &_content{
+        margin-bottom: 40px;
+        h1{
+            margin-bottom: 40px;
+        }
+        h2{
+            margin-bottom: 20px;
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        img{
+            margin-bottom: 20px;
+            border-radius: 16px;
+        }
+    }
+    &_tag{
+        margin-bottom: 120px;
+    }
+    &_more{
+        h3{
+            margin-bottom: 40px;
+        }
+        ul{
+            li{
+                margin-bottom: 40px;
+                &:nth-last-of-type(1){
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-svg{
+            width: 3%;
+            svg{
+                margin-right: 8px;
+                rotate: 180deg;
+            }
+        }
+        &-text{
+            width: 97%;
+            font-size: 20px;
+            color: #180F8A;
+        }
+    }
+    &_desc-b{
+        font-weight: bold;
+    }
+    &_desc-g{
+        color: #636363;
+    }
+}
+
+.slick-article{
+    img{
+        max-width: 700px;
+    }
+}
+
+
 @media only screen and (max-width: 1480px) {
     //service
     .service{
@@ -1037,7 +1143,7 @@ footer{
         }
         h2{
             margin-bottom: 40px;
-            font-size: 60px;
+            font-size: 50px;
         }
         .footer_desc{
             font-size: 22px;
@@ -1055,6 +1161,54 @@ footer{
                 }
                 .contact-block_name{
                     font-size: 22px;
+                }
+            }
+        }
+    }
+
+    //article
+    .article{
+        background-image: url(../images/fon-article-mob.png);
+        h1{
+            padding: 55px 0;
+            font-size: 60px;
+        }
+        &-wr{
+            margin-bottom: 80px;
+        }
+        &-wr-2{
+            margin-bottom: 120px;
+        }
+    }
+
+    .article-block{
+        margin-bottom: 64px;
+        margin-right: 0px;
+        border-radius: 16px;
+        max-width: 1500px;
+        width: 100%;
+        &:nth-last-of-type(1){
+            margin-bottom: 0;
+        }
+        &:nth-of-type(n + 3){
+            margin-top: 0px;
+        }
+    }
+
+    .article-wr-2{
+        ul{
+            li{
+                margin-right: 16px;
+                a{
+                    margin-bottom: 16px;
+                    padding: 15px 20px;
+                    border-radius: 150px;
+                    background-color: #DEB359;
+                    color: #fff;
+                    display: inline-block;
+                }
+                &:nth-last-of-type(1){
+                    margin-left: 0px;
                 }
             }
         }
