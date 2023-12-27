@@ -100,47 +100,30 @@ AOS.init({
   once: true, // whether animation should happen only once - while scrolling down
 });
 
-// $('.slick-article').slick({
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   arrows: false,
-//   fade: true,
-//   asNavFor: '.slick-article-nav'
-// });
+if($(window).width() >= 1200){
+  $(document).ready(function () {
 
-// $('.slick-article').slick({
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   arrows: false,
-//   fade: true,
-//   asNavFor: '.slick-article'
-// });
+    $(".service-block_item").click(function(){
+      $(".service-block_item").each(function(){
+        $(this).find('.service-info').removeClass("display-block-m");
+        $(this).find('.service-block_item-arrow').removeClass("service-block_item-arrow-d");
+      });
+      $(this).find('.service-info').addClass("display-block-m");
+      $(this).find('.service-block_item-arrow').addClass("service-block_item-arrow-d");
+    });
 
+  });
+}
 
-$('.service-block_item').on("click", function(){  
-  $(".service-block_item-arrow.service-block_item-arrow-d").removeClass('service-block_item-arrow-d');
-  $(this).find(".service-block_item-arrow ").addClass('service-block_item-arrow-d');
-});
-
-
-$(document).ready(function () {
-  // Toggle service info on click
-  $('.service-block_item').on('click', function () {
-      // Get the service info block associated with the clicked item
-      var serviceInfo = $(this).find('.service-info');
-      
-      // Check if the service info block is not visible
-      if (!serviceInfo.hasClass('display-block')) {
-          // Hide other visible service info blocks and show the clicked one
-          $('.service-info.display-block').removeClass('display-block');
-          serviceInfo.addClass('display-block');
-      }
+$(document).ready(function(){
+  $('.service-block_item').click(function() {
+    if ($(this).find('.service-info').hasClass("display-block-m-m")) {
+      $(this).find('.service-info').removeClass("display-block-m-m");
+      $(this).find('.service-block_item-arrow').removeClass("service-block_item-arrow-d-m");
+    } else {
+      $(this).find(".service-info").addClass('display-block-m-m');
+      $(this).find('.service-block_item-arrow').addClass("service-block_item-arrow-d-m");
+    }
+    return false;
   });
 });
-
-
-
-
-
-
-

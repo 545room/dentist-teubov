@@ -39,6 +39,10 @@ img{
     display: block!important;
 }
 
+.display-block-m{
+    display: block!important;
+}
+
 .display-none{
     display: none!important;
 }
@@ -869,6 +873,14 @@ footer{
         display: none;
     }
 
+    .display-block-m{
+        display: none!important;
+    }
+    
+    .display-block-m-m{
+        display: block!important;
+    }
+
     .block-menu{
         nav{
             padding: 24px 0;
@@ -982,7 +994,11 @@ footer{
             .service-block_item-arrow-d{
                 svg{
                     fill: #fff;
-                    rotate: -90deg;
+                }
+            }
+            .service-block_item-arrow-d-m{
+                svg{
+                    fill: #DEB359;
                 }
             }
         }
